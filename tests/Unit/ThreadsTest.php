@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 /**
  * Class ThreadsTest
  * @package Tests\Unit
- * vendor/bin/phpunit
+ * vendor/bin/phpunit tests/Unit/ThreadsTest.php
  */
 class ThreadsTest extends TestCase
 {
