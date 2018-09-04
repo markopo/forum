@@ -4,8 +4,6 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ParticipationInForumTest extends TestCase
 {
@@ -17,14 +15,14 @@ class ParticipationInForumTest extends TestCase
     {
 
         // 1. user create && signin
-        $user = factory('App\User')->create();
+        $user = create('App\User');
         $this->signIn($user);
 
         // 2. thread
-        $thread = factory('App\Thread')->create();
+        $thread = create('App\Thread');
 
         // 3. reply
-        $reply = factory('App\Reply')->make();
+        $reply = make('App\Reply');
 
         // 4. submit
         $this->post('/threads/' . $thread->id . '/replies', $reply->toArray());
